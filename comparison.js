@@ -31,6 +31,7 @@ if (!parseInt(process.argv[2])) {
     points = fileData.slice(1);
 	points.pop();
 	points = points.map(function(a) { return a.split(' '); });
+	points = points.map(function(a) { return [parseFloat(a[0]), parseFloat(a[1])]; })
 	quadPoints = points.map(function(p) { return { x: p[0], y: p[1] }; });
 } else {
 	count = process.argv[2];
